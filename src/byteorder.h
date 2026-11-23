@@ -13,8 +13,10 @@ static inline u64 __swab64_constant(u64 val) {
     return ((u64)__swab32_constant(val) << 32) | __swab32_constant(val>>32);
 }
 static inline u32 __swab32(u32 val) {
-    asm("bswapl %0" : "+r"(val));
-    return val;
+    // The bswap instruction needs an 80486. Compute the swap in C so the
+    // code also runs on an 80386; gcc emits bswap itself only when -march
+    // allows it, and SeaBIOS builds with -march=i386.
+    return __swab32_constant(val);
 }
 static inline u64 __swab64(u64 val) {
     union u64_u32_u i, o;
