@@ -18,10 +18,10 @@ Base: upstream `rel-1.17.0` (`b52ca86e094d19b58e2304417787e96b940e39c6`).
 
 ## Building
 
-The unemu PC emulator builds this source reproducibly with its own
-configuration (`vendor/seabios/fetch.sh` and `vendor/seabios/config` in
-<https://github.com/unemu-org/unemupc>). The upstream build instructions in
-`README` apply unchanged.
+The release ROMs and their configurations are in `unemu/`; see
+[`unemu/BUILD.md`](unemu/BUILD.md). The unemu PC emulator builds the same
+bytes with `vendor/seabios/fetch.sh` in <https://github.com/unemu-org/unemupc>.
+The upstream build instructions in `README` apply unchanged.
 
 ## Licence
 
