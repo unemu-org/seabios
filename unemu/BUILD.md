@@ -1,6 +1,6 @@
 # Building the unemu release ROMs
 
-Release `v1.17.0-unemu2` publishes two ROMs built from this tree:
+Release `v1.17.0-unemu1` publishes two ROMs built from this tree:
 
 | Asset | Size | SHA-256 | Configuration | Version string |
 |---|---|---|---|---|
