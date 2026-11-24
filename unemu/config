@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# This file may be distributed under the terms of the GNU LGPLv3 license.
 # SeaBIOS rel-1.17.0 fragment; olddefconfig supplies the pinned defaults.
 
 # The emulated-machine target retains ISA ATA and CMOS RAM-size fallbacks.

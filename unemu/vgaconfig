@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# This file may be distributed under the terms of the GNU LGPLv3 license.
 # SeaVGABIOS rel-1.17.0 fragment; olddefconfig supplies the pinned defaults.
 
 # Standard VGA uses only the IBM register interface, without Bochs DISPI.
