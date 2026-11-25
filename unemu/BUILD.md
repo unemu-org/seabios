@@ -4,7 +4,7 @@ Release `v1.17.0-unemu1` publishes two ROMs built from this tree:
 
 | Asset | Size | SHA-256 | Configuration | Version string |
 |---|---|---|---|---|
-| `seabios-isa.bin` | 131072 | `ad50fdb5e12a03dd5c17eac481a4183a7793b84252319eea02b8c878667c994f` | `unemu/config` | `1.17.0-unemupc98-isa` |
+| `seabios-isa.bin` | 131072 | `9aace5de21df74ba42243664454d1f2130c143fc04ce5b4e69c0c71e55e9b699` | `unemu/config` | `1.17.0-unemupc98-isa` |
 | `seavgabios-stdvga.bin` | 32768 | `1adc6c0fa72b93c5d0659575c992b1bf6f64fd451c444b2a735e22f0a3d6e925` | `unemu/vgaconfig` | `1.17.0-unemupc-stdvga` |
 
 `seabios-isa.bin` is SeaBIOS for QEMU-style firmware on an ISA board without

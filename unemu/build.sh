@@ -15,7 +15,7 @@ OUT_DIR="${1:?usage: unemu/build.sh <output directory>}"
 CROSS_PREFIX="${CROSS_PREFIX:-i686-elf-}"
 HOSTCC="${HOSTCC:-cc}"
 VERSION="1.17.0"
-BIOS_SHA256="ad50fdb5e12a03dd5c17eac481a4183a7793b84252319eea02b8c878667c994f"
+BIOS_SHA256="9aace5de21df74ba42243664454d1f2130c143fc04ce5b4e69c0c71e55e9b699"
 VGA_SHA256="1adc6c0fa72b93c5d0659575c992b1bf6f64fd451c444b2a735e22f0a3d6e925"
 
 if command -v sha256sum >/dev/null 2>&1; then
