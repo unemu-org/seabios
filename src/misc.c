@@ -61,10 +61,25 @@ handle_02(void)
 void
 mathcp_setup(void)
 {
-    dprintf(3, "math cp init\n");
-    // 80x87 coprocessor installed
-    set_equipment_flags(0x02, 0x02);
-    enable_hwirq(13, FUNC16(entry_75));
+    // POST runs in 32bit flat mode; clear CR0.EM/TS to avoid #NM.
+    u32 cr0 = cr0_read();
+    cr0_write(cr0 & ~0x0c);
+    // Intel 80387 Programmer's Reference Manual, 6.2.3, Figure 6-1:
+    // non-waiting stores distinguish an absent socket from an initialized FPU.
+    asm volatile("fninit");
+    u16 status = 0x5a5a;
+    asm volatile("fnstsw %0" : "+m" (status));
+    int present = (status & 0xff) == 0;
+    if (present) {
+        u16 control = 0x5a5a;
+        asm volatile("fnstcw %0" : "+m" (control));
+        present = (control & 0x103f) == 0x003f;
+    }
+    cr0_write(cr0);
+    dprintf(3, "math cp init: %s\n", present ? "present" : "absent");
+    set_equipment_flags(0x02, present ? 0x02 : 0);
+    if (present)
+        enable_hwirq(13, FUNC16(entry_75));
 }
 
 // INT 75 - IRQ13 - MATH COPROCESSOR EXCEPTION

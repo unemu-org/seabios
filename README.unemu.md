@@ -9,6 +9,7 @@ Base: upstream `rel-1.17.0` (`b52ca86e094d19b58e2304417787e96b940e39c6`).
 
 ## Fixes on top of upstream
 
+- Probe the math coprocessor before reporting it in INT 11h and enabling IRQ13.
 - `byteorder: avoid bswap so SeaBIOS runs on an 80386` — `__swab32()`
   used the `bswapl` instruction, which the 80386 lacks. It is reached from
   the QEMU fw_cfg code and from the ATA and block command code, so a build
